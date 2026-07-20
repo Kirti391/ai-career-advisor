@@ -79,7 +79,7 @@ It empowers users to make informed career decisions while supporting **United Na
 
 - Git & GitHub
 - Visual Studio Code
-- Postman
+
 
 ---
 
