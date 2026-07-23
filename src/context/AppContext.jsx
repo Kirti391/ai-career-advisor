@@ -1,6 +1,21 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { uploadResume, analyzeResume, getHistory, loginUser, signupUser, getCurrentUser, updateProfileSettings, logoutUser } from '../services/api';
 import { mockAnalysisResults } from '../utils/mockData';
+const safeParse = (key, fallback = null) => {
+  try {
+    const value = localStorage.getItem(key);
+
+    if (!value || value === "undefined") {
+      return fallback;
+    }
+
+    return JSON.parse(value);
+  } catch (err) {
+    console.error(`Invalid localStorage value for ${key}:`, err);
+    localStorage.removeItem(key);
+    return fallback;
+  }
+};
 
 export const AppContext = createContext();
 
@@ -36,28 +51,22 @@ export const AppProvider = ({ children }) => {
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   });
 
-  const [user, setUser] = useState(() => {
-    const saved = localStorage.getItem('user');
-    return saved ? JSON.parse(saved) : null;
-  });
+const [user, setUser] = useState(() => safeParse("user"));
 
   const [resume, setResume] = useState(null);
 
-  const [analysisResults, setAnalysisResults] = useState(() => {
-    const saved = localStorage.getItem('analysis');
-    return saved ? JSON.parse(saved) : null;
-  });
-
+ const [analysisResults, setAnalysisResults] = useState(() =>
+  safeParse("analysis")
+);
   const [history, setHistory] = useState([]);
   const [toasts, setToasts] = useState([]);
-  const [settings, setSettings] = useState(() => {
-    const saved = localStorage.getItem('settings');
-    return saved ? JSON.parse(saved) : {
-      notificationsEnabled: true,
-      weeklyDigest: false,
-      language: 'en'
-    };
-  });
+  const [settings, setSettings] = useState(() =>
+  safeParse("settings", {
+    notificationsEnabled: true,
+    weeklyDigest: false,
+    language: "en",
+  })
+);
 
   useEffect(() => {
     const initializeSession = async () => {

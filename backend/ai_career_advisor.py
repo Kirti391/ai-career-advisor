@@ -12,7 +12,7 @@ Original file is located at
 # !pip install -q langgraph pydantic PyMuPDF groq
 
 import langgraph
-from backend.database import supabase
+
 
 from langgraph.graph import StateGraph, START, END
 
