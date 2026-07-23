@@ -156,9 +156,10 @@ const [user, setUser] = useState(() => safeParse("user"));
     const response = await loginUser(email, password);
 
     console.log("Success:", response);
-
-    const token = response.token;
-    const sessionUser = response.user;
+const token = response.data.token;
+const sessionUser = response.data.user;
+    // const token = response.token;
+    // const sessionUser = response.user;
 
     localStorage.setItem("authToken", token);
     setUser(sessionUser);
