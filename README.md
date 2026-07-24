@@ -336,7 +336,7 @@ PathFinder AI supports SDG 8 by:
 **Developed By**
 
 - Team Name- Hackovate
-- Team Members - Palak Garg , Kirti
+- Team Members -Kirti, Palak Garg
 
 **Academic Project**
 
