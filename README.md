@@ -1,5 +1,6 @@
 # 🚀 PathFinder AI – AI Career Advisor
-
+[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge)](https://pathfinder-ai-lm1z.onrender.com)
+[![API](https://img.shields.io/badge/API-Backend-green?style=for-the-badge)](https://pathfinder-ai-backend-vyo3.onrender.com/docs)
 > **An AI-powered career advisory platform that provides intelligent resume analysis, ATS evaluation, personalized career guidance, skill gap identification, interview preparation, and downloadable career reports.**
 
 ---
@@ -349,10 +350,6 @@ IBM SkillsBuild Virtual Internship 2026
 This project is developed for **educational and research purposes** under the **IBM SkillsBuild Academic Internship Program 2026**.
 
 ---
-# 🚀 PathFinder AI – AI Career Advisor
-
-[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge)](https://pathfinder-ai-lm1z.onrender.com)
-[![API](https://img.shields.io/badge/API-Backend-green?style=for-the-badge)](https://pathfinder-ai-backend-vyo3.onrender.com/docs)
 
 # 🙏 Acknowledgements
 
